@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playwrite+PL:wght@100..400&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color:  #5F524E;
+    font-family: "Playwrite PL", cursive;
+    font-weight: 200;
+    color: #D67747;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 10px;
+    padding 10px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    border: 2px solid #D67747;
+    border-radius: 5px;
+}
+
+.black{
+    background-color: #293332 ;
+    color: white;
+}
+
+.reset{
+    background-color: #83C8D6;
+}
+button:hover{
+    cursor: pointer;
+}
+
+/*color button*/
+#colorButton {
+    background-color: white
+    color: #fff; /* Initial text color */
+    cursor: pointer;
+    animation: colorCycle 5s infinite; /* Animation for color cycling */
+}
+
+@keyframes colorCycle {
+    0% { color: red; } /* Red */
+    25% { color: orange; } /* Green */
+    50% { color: green; } /* Blue */
+    75% { color: blue; } 
+    90% { color: purple; } 
+    100% { color: red; }
+    
+
+}
+
+
+.menu{
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid{
+    background-color: white;
+    width: 600px;
+    height: 600px;
+}
+
+
+.size{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+}
+.text{
+    max-height: 20px;
+    max-width: 50px;
+}
+
+.error{
+    display: flex;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    justify-content: center;
+}
+
