@@ -77,9 +77,12 @@ button:hover{
 
 .rows, .columns{
     display: flex;
-    border: .25px solid #293332;
     flex: 1;
 }
+.columns{
+    border: .25px solid #849997;
+}
+
 
 
 .colorB{
@@ -131,6 +134,7 @@ label{
 
 .black{
     background-color: #293332;
+    border: .25px solid #293332;
 }
 
 .white{

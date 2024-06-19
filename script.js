@@ -26,9 +26,10 @@ function createGrid(userGridSize){
         }
 
     }
+    addHoverEffect();
 }
 createGrid(userGridSize); //creates grid here
-addHoverEffect();
+
 
 //handle when user selects a new size of canvas
 document.querySelector('.setSize').onclick = function(){
@@ -93,7 +94,6 @@ randButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     clearGrid();
     createGrid(userGridSize);
-    addHoverEffect();
 });
 
 //get random color
