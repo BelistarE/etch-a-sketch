@@ -23,13 +23,16 @@ button{
     height: 30px;
 }
 
-.black{
+.blackB{
     background-color: #293332 ;
     color: white;
 }
 
 .reset{
-    background-color: #83C8D6;
+    background-color: #e6a55b;;
+}
+.reset:hover{
+    background-color: #D67747;
 }
 button:hover{
     cursor: pointer;
@@ -54,6 +57,9 @@ button:hover{
 
 }
 
+button:hover{
+    color: rgb(189, 18, 152);
+}
 
 .menu{
     display:flex;
@@ -116,8 +122,11 @@ button:hover{
 .setSize{
     border: 2px solid #293332 ;
     width: 100px;
+    
 }
-
+.setSize:hover {
+    background-color: #e6a55b;
+}
 .error{
     display: flex;
     font-family: "Nunito Sans", sans-serif;

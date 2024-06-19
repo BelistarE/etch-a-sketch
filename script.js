@@ -1,7 +1,7 @@
 console.log("test");
 const gridContainer = document.querySelector('.grid');
 const resetButton = document.querySelector('.reset');
-const blackButton = document.querySelector('.black');
+const blackButton = document.querySelector('.blackB');
 const whiteButtom = document.querySelector('.white');
 const randButton = document.querySelector('.random');
 
