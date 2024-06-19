@@ -1,14 +1,16 @@
 console.log("test");
 const gridContainer = document.querySelector('.grid');
-//stuff for rgb button:
-document.getElementById('colorButton').addEventListener('click', function() {
-    // Add your button click logic here
-    console.log('Button clicked!');
-});
+const resetButton = document.querySelector('.reset');
+const blackButton = document.querySelector('.black');
+const whiteButtom = document.querySelector('.white');
+const randButton = document.querySelector('.random');
 
+
+let currentColor = "black";
 let userGridSize = 16;
-//create grid
 
+
+//create grid
 function createGrid(userGridSize){
     for(i=0; i<userGridSize; i++){
         //create row first
@@ -25,7 +27,9 @@ function createGrid(userGridSize){
 
     }
 }
-createGrid(userGridSize);
+createGrid(userGridSize); //creates grid here
+addHoverEffect();
+
 //handle when user selects a new size of canvas
 document.querySelector('.setSize').onclick = function(){
     userGridSize = document.querySelector('.text').value;
@@ -38,13 +42,66 @@ document.querySelector('.setSize').onclick = function(){
     createGrid(userGridSize);
     displayGridSize();
 }
+
+//updates display on the bottom left
 function displayGridSize(){
     document.querySelector('.infoLabel').textContent = `size of canvas: ${userGridSize} X`;
 }
+
+//clears all divs by removing each child one at a time
 function clearGrid(){
     while (gridContainer.firstChild){
         gridContainer.removeChild(gridContainer.lastChild);
     }
 }
 
+//add a onhover class to each div that is hovered on. 
+function addHoverEffect() {
+    // Each 'column' item is a cube. Selects all.
+    const columns = document.querySelectorAll('.columns');
+    columns.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            // Remove existing color classes
+            square.classList.remove('black', 'white');
+            if (currentColor === "random") {
+                // Apply a random color
+                square.style.backgroundColor = getRandomColor();
+            } else {
+                square.style.backgroundColor = '';
+                // Add the current color class
+                square.classList.add(currentColor);
+            }
+        });
+    });
+}
 
+//add button event handlers
+blackButton.addEventListener('click', () => {
+    currentColor = "black";
+});
+
+whiteButtom.addEventListener('click', () => {
+    currentColor = "white";
+})
+
+randButton.addEventListener('click', () => {
+    currentColor = "random";
+})
+
+
+//event listener to clear the page
+resetButton.addEventListener('click', () => {
+    clearGrid();
+    createGrid(userGridSize);
+    addHoverEffect();
+});
+
+//get random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
